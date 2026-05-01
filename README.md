@@ -149,6 +149,3 @@ For `magpie-tts-zeroshot`, NVIDIA requires a short reference voice sample plus i
 - Partial transcript summarization for very long interviews
 - Analytics around provider fallback rate, latency per turn, and token spend
 
-## 📄 License
-
-MIT
