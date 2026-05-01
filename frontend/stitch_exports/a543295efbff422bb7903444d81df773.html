@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interview Scorecard - Alex Rivera</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#004ac6",
+                      "surface-bright": "#f8f9fa",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#434655",
+                      "on-secondary-fixed": "#00174b",
+                      "surface": "#f8f9fa",
+                      "outline": "#737686",
+                      "surface-container": "#edeeef",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f4f5",
+                      "surface-tint": "#0053db",
+                      "surface-container-high": "#e7e8e9",
+                      "on-tertiary-container": "#ffede6",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-dim": "#d9dadb",
+                      "on-surface": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#ffdbcd",
+                      "secondary-fixed": "#dbe1ff",
+                      "on-secondary-container": "#394c84",
+                      "primary-container": "#2563eb",
+                      "secondary": "#495c95",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-container-highest": "#e1e3e4",
+                      "tertiary": "#943700",
+                      "background": "#f8f9fa",
+                      "on-secondary-fixed-variant": "#31447b",
+                      "tertiary-container": "#bc4800",
+                      "on-background": "#191c1d",
+                      "on-secondary": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "secondary-fixed-dim": "#b4c5ff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#00174b",
+                      "primary-fixed": "#dbe1ff",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#acbfff",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#eeefff",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#e1e3e4",
+                      "inverse-surface": "#2e3132"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Manrope"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container flex min-h-screen">
+<!-- SideNavBar (from JSON) -->
+<nav class="h-full w-64 fixed left-0 top-0 bg-surface-container-low border-none flex flex-col py-8 pl-4 z-50">
+<div class="mb-12 px-4">
+<h1 class="font-headline text-lg font-black text-on-surface tracking-tight">Cognitive Gallery</h1>
+<p class="text-on-surface-variant text-sm font-medium mt-1">Premium Reviewer Portal</p>
+</div>
+<button class="mx-4 mb-8 bg-primary text-on-primary font-headline text-sm font-bold tracking-wide uppercase px-6 py-3 rounded-full hover:bg-surface-tint transition-colors shadow-[0_4px_14px_rgba(0,74,198,0.2)]">
+            New Evaluation
+        </button>
+<ul class="flex-1 space-y-2">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50 transition-colors rounded-l-full font-headline text-sm tracking-wide uppercase font-bold" href="#">
+<span class="material-symbols-outlined text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50 transition-colors rounded-l-full font-headline text-sm tracking-wide uppercase font-bold" href="#">
+<span class="material-symbols-outlined text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">group</span>
+                    Candidate Pool
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-container-lowest text-primary rounded-l-full translate-x-2 transition-all font-headline text-sm tracking-wide uppercase font-bold shadow-[0_4px_20px_rgba(25,28,29,0.03)] scale-95 duration-150 relative z-10" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+                    Scorecards
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50 transition-colors rounded-l-full font-headline text-sm tracking-wide uppercase font-bold" href="#">
+<span class="material-symbols-outlined text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">analytics</span>
+                    Insights
+                </a>
+</li>
+</ul>
+<div class="mt-auto space-y-2 pt-8 border-t border-surface-container-highest/30 pr-4">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface transition-colors font-headline text-xs tracking-wide uppercase font-bold" href="#">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface transition-colors font-headline text-xs tracking-wide uppercase font-bold" href="#">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Settings
+            </a>
+<div class="mt-6 flex items-center gap-3 px-4">
+<img alt="Reviewer Avatar" class="w-8 h-8 rounded-full border border-surface-container-highest" data-alt="professional headshot of man in casual business attire with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAggb5Spjy0TNChzdQJaFHU_1lWhiYqAaq0tPJPRr0vQbMt6Hn4Qf9Deq6_gb22C2QbX6CdfISWO_SQ1P_a34xd-gEgpPkZKRds-YweIDJhVieJyHZ1VfQLPRAoNlwuN6dllxmiVeN_3U5V4xGGv44TbbG9CYfZ-76eKh_eLBzrFihOBNkCXVhKhLQfvAt81a59UB4Gtly0d9-Nu5dXTwC-E_XXE9I51-nYGi5JjLVu-h3oSEW3ORC305phpTYzAn-pPAkk1jMSMtlB"/>
+</div>
+</div>
+</nav>
+<!-- TopNavBar (from JSON) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-surface/80 backdrop-blur-2xl flex justify-between items-center px-12 py-6 h-20">
+<div class="flex items-center gap-8">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface">Interview Scorecard</h2>
+<nav class="hidden lg:flex gap-6 mt-1">
+<a class="font-body text-sm font-medium text-primary border-b-2 border-primary pb-2" href="#">Overview</a>
+<a class="font-body text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors duration-200 pb-2" href="#">Notes</a>
+<a class="font-body text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors duration-200 pb-2" href="#">Recordings</a>
+<a class="font-body text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors duration-200 pb-2" href="#">Comparison</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-low duration-200 scale-98 active:scale-95">
+<span class="material-symbols-outlined font-light">share</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-low duration-200 scale-98 active:scale-95">
+<span class="material-symbols-outlined font-light">download</span>
+</button>
+<div class="w-px h-6 bg-surface-container-highest mx-2"></div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-body text-sm font-semibold hover:bg-surface-tint transition-colors duration-200 scale-98 active:scale-95 shadow-[0_4px_14px_rgba(0,74,198,0.15)]">
+                Final Decision
+            </button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-2">
+<span class="material-symbols-outlined font-light">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-28 px-12 pb-24 w-full max-w-[1600px]">
+<!-- Page Header Area -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="max-w-2xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label text-xs tracking-wide uppercase font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">mic</span>
+                        Live Voice
+                    </span>
+<span class="text-on-surface-variant font-label text-sm tracking-wide uppercase">Senior Frontend Engineer</span>
+</div>
+<h1 class="font-headline text-5xl font-extrabold text-on-surface tracking-tight mb-2">Alex Rivera</h1>
+<p class="text-on-surface-variant font-body text-lg">Interviewed on April 21 • 45 min duration • Hard Difficulty</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded-lg border border-outline-variant/20 text-primary font-body font-semibold hover:bg-surface-container-low transition-colors text-sm flex items-center gap-2 bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+                    Practice Again
+                </button>
+<button class="px-6 py-3 rounded-lg border border-outline-variant/20 text-on-surface-variant font-body font-semibold hover:bg-surface-container-low transition-colors text-sm flex items-center gap-2 bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[18px]">summarize</span>
+                    Download Report
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-12">
+<!-- Left Column (Main Content) -->
+<div class="xl:col-span-8 space-y-12">
+<!-- Overall Evaluation (Bento Hero) -->
+<section class="bg-surface-container-lowest rounded-[1.5rem] p-10 shadow-[0_20px_40px_rgba(25,28,29,0.02)] border border-surface-variant/30 flex flex-col md:flex-row gap-10 items-center">
+<div class="flex-shrink-0 text-center md:text-left">
+<p class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-2 font-bold">Overall Match</p>
+<div class="relative inline-flex items-center justify-center">
+<svg class="w-40 h-40 transform -rotate-90" viewbox="0 0 120 120">
+<circle class="text-surface-container" cx="60" cy="60" fill="none" r="54" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="60" cy="60" fill="none" r="54" stroke="currentColor" stroke-dasharray="339.29" stroke-dashoffset="40.71" stroke-width="8"></circle>
+</svg>
+<span class="absolute font-headline text-5xl font-black text-on-surface">88<span class="text-2xl text-on-surface-variant ml-1">%</span></span>
+</div>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-4">AI Assessment Summary</h3>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                            Alex demonstrated strong technical knowledge and clear communication throughout the session. Areas for growth include technical depth in architectural trade-offs, specifically regarding state management scaling in large React applications.
+                        </p>
+</div>
+</section>
+<!-- Category Breakdown Grid -->
+<section>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                        Performance Vectors
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(25,28,29,0.02)] border border-surface-variant/20">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-label text-sm tracking-wide uppercase font-bold text-on-surface-variant">Communication</h4>
+<span class="font-headline text-xl font-extrabold text-on-surface">92%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full mb-4 overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[92%]"></div>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Exceptional articulation of complex concepts. Maintained strong pacing.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(25,28,29,0.02)] border border-surface-variant/20">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-label text-sm tracking-wide uppercase font-bold text-on-surface-variant">Technical Depth</h4>
+<span class="font-headline text-xl font-extrabold text-on-surface">84%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full mb-4 overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[84%] opacity-80"></div>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Solid fundamentals, but hesitated on edge-case scaling scenarios.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(25,28,29,0.02)] border border-surface-variant/20">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-label text-sm tracking-wide uppercase font-bold text-on-surface-variant">Confidence</h4>
+<span class="font-headline text-xl font-extrabold text-on-surface">90%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full mb-4 overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[90%]"></div>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Projected assurance without arrogance. Handled pushback well.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(25,28,29,0.02)] border border-surface-variant/20">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-label text-sm tracking-wide uppercase font-bold text-on-surface-variant">Clarity</h4>
+<span class="font-headline text-xl font-extrabold text-on-surface">86%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full mb-4 overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[86%] opacity-90"></div>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Answers were generally concise, though minor rambling occurred on behavioral questions.</p>
+</div>
+</div>
+</section>
+<!-- Strengths & Improvements -->
+<section class="bg-surface-container-low rounded-2xl p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-600 font-light">thumb_up</span>
+                                Key Strengths
+                            </h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="font-body text-on-surface-variant">Articulate explanations of core concepts</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="font-body text-on-surface-variant">Strong React fundamentals and hooks knowledge</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="font-body text-on-surface-variant">Excellent proactive clarification of ambiguous requirements</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-600 font-light">trending_up</span>
+                                Areas for Improvement
+                            </h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-[20px] mt-0.5">arrow_forward</span>
+<span class="font-body text-on-surface-variant">Expand on system design patterns for frontend architecture</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-[20px] mt-0.5">arrow_forward</span>
+<span class="font-body text-on-surface-variant">Minimize filler words during complex answers</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Question Review List -->
+<section>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">forum</span>
+                        Question Review
+                    </h3>
+<div class="space-y-6">
+<!-- Q1 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_10px_30px_rgba(25,28,29,0.02)] border border-surface-variant/10 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-start mb-4 gap-4">
+<h4 class="font-headline text-lg font-semibold text-on-surface">Describe a complex architectural disagreement you resolved.</h4>
+<span class="bg-surface-container px-3 py-1 rounded-md text-xs font-label uppercase font-bold text-on-surface-variant whitespace-nowrap">Behavioral</span>
+</div>
+<div class="bg-surface rounded-lg p-4 mb-4">
+<p class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-2">Response Summary</p>
+<p class="font-body text-sm text-on-surface leading-relaxed">Candidate detailed a conflict regarding state management (Redux vs Context API). Effectively explained the pros/cons analysis they presented to the team, leading to a hybrid consensus.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<p class="font-body text-sm text-on-surface-variant italic">Evaluator Note: Showed mature conflict resolution and data-driven decision making. Score: High.</p>
+</div>
+</div>
+<!-- Q2 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_10px_30px_rgba(25,28,29,0.02)] border border-surface-variant/10 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-surface-dim"></div>
+<div class="flex justify-between items-start mb-4 gap-4">
+<h4 class="font-headline text-lg font-semibold text-on-surface">How do you optimize a large React application for performance?</h4>
+<span class="bg-surface-container px-3 py-1 rounded-md text-xs font-label uppercase font-bold text-on-surface-variant whitespace-nowrap">Technical</span>
+</div>
+<div class="bg-surface rounded-lg p-4 mb-4">
+<p class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-2">Response Summary</p>
+<p class="font-body text-sm text-on-surface leading-relaxed">Covered memoization, lazy loading, and avoiding prop drilling. Struggled slightly when asked about optimizing render cycles in concurrent mode.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<p class="font-body text-sm text-on-surface-variant italic">Evaluator Note: Good breadth of knowledge, but lacked depth in advanced rendering optimization. Score: Moderate.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Sidebar -->
+<div class="xl:col-span-4">
+<div class="sticky top-28 space-y-8">
+<!-- Quick Summary Card -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] p-8 shadow-[0_20px_40px_rgba(25,28,29,0.04)] border border-surface-variant/20">
+<h3 class="font-label text-xs tracking-widest uppercase font-bold text-on-surface-variant mb-6">Snapshot</h3>
+<div class="flex items-center justify-between mb-6 pb-6 border-b border-surface-container-highest/50">
+<span class="font-body text-on-surface">Status</span>
+<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Completed</span>
+</div>
+<div class="flex items-center justify-between mb-6 pb-6 border-b border-surface-container-highest/50">
+<span class="font-body text-on-surface">Overall Score</span>
+<span class="font-headline text-2xl font-black text-on-surface">88<span class="text-sm text-on-surface-variant ml-0.5">%</span></span>
+</div>
+<div class="mb-8">
+<h4 class="font-label text-xs tracking-wider uppercase font-bold text-on-surface-variant mb-3">Next Steps</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-body text-sm text-on-surface">Focus on System Design</span>
+</li>
+<li class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+<span class="font-body text-sm text-on-surface">Re-practice Module 4</span>
+</li>
+</ul>
+</div>
+<button class="w-full bg-surface text-primary border border-surface-container-highest hover:bg-surface-container-low transition-colors px-6 py-3.5 rounded-xl font-body font-semibold text-sm flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                            View Full Transcript
+                        </button>
+</div>
+<!-- Ambient Graphic / Filler -->
+<div class="bg-surface-container-low rounded-[1.5rem] p-8 h-48 flex items-center justify-center opacity-70">
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest text-center">
+                            Cognitive Engine<br/>Analysis Complete
+                         </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

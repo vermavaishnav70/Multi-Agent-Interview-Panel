@@ -1,0 +1,81 @@
+kind: source
+name: interview-db
+type: postgres
+host: ${SUPABASE_DB_HOST}
+port: ${SUPABASE_DB_PORT}
+database: ${SUPABASE_DB_NAME}
+user: ${SUPABASE_DB_USER}
+password: ${SUPABASE_DB_PASSWORD}
+
+---
+kind: tool
+name: get-recent-sessions
+type: postgres-sql
+source: interview-db
+description: Get the most recent interview sessions for analytics and reporting
+statement: >
+  SELECT id, job_role, difficulty, status, max_turns, turn_count, created_at
+  FROM sessions
+  ORDER BY created_at DESC
+  LIMIT 10;
+
+---
+kind: tool
+name: get-session-scorecard
+type: postgres-sql
+source: interview-db
+description: Get a scorecard by session ID
+parameters:
+  - name: session_id
+    type: string
+    description: The session ID to fetch the scorecard for
+statement: >
+  SELECT s.job_role, s.difficulty, sc.scores_json, sc.resume_accuracy,
+         sc.final_score, sc.hire_recommendation, sc.created_at
+  FROM sessions s
+  JOIN scorecards sc ON s.id = sc.session_id
+  WHERE s.id = $1;
+
+---
+kind: tool
+name: get-aggregate-scores
+type: postgres-sql
+source: interview-db
+description: Get average scores and statistics across all completed sessions
+statement: >
+  SELECT
+    COUNT(*) as total_sessions,
+    AVG(final_score) as avg_score,
+    MIN(final_score) as min_score,
+    MAX(final_score) as max_score
+  FROM scorecards;
+
+---
+kind: tool
+name: get-session-transcript
+type: postgres-sql
+source: interview-db
+description: Get the full interview transcript for a session
+parameters:
+  - name: session_id
+    type: string
+    description: The session ID to fetch the transcript for
+statement: >
+  SELECT role, agent_name, content, timestamp
+  FROM messages
+  WHERE session_id = $1
+  ORDER BY timestamp ASC;
+
+---
+kind: toolset
+name: interview-analytics
+tools:
+  - get-recent-sessions
+  - get-aggregate-scores
+
+---
+kind: toolset
+name: interview-review
+tools:
+  - get-session-scorecard
+  - get-session-transcript

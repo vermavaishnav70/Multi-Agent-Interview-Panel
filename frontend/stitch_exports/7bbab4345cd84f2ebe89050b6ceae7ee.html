@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cognitive Gallery - Live Voice Interview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#495c95",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-primary-container": "#eeefff",
+                    "background": "#f8f9fa",
+                    "secondary-fixed": "#dbe1ff",
+                    "outline": "#737686",
+                    "on-tertiary-container": "#ffede6",
+                    "inverse-surface": "#2e3132",
+                    "surface-dim": "#d9dadb",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface-container": "#edeeef",
+                    "primary-fixed": "#dbe1ff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#191c1d",
+                    "primary-container": "#2563eb",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#00174b",
+                    "tertiary": "#943700",
+                    "primary": "#004ac6",
+                    "inverse-on-surface": "#f0f1f2",
+                    "tertiary-container": "#bc4800",
+                    "on-secondary-container": "#394c84",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c3c6d7",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-tint": "#0053db",
+                    "surface-bright": "#f8f9fa",
+                    "surface": "#f8f9fa",
+                    "on-background": "#191c1d",
+                    "surface-container-high": "#e7e8e9",
+                    "on-secondary-fixed-variant": "#31447b",
+                    "on-surface-variant": "#434655",
+                    "on-primary-fixed": "#00174b",
+                    "secondary-container": "#acbfff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-variant": "#e1e3e4",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #191c1d; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Subtle glow animation for AI Voice Orb */
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 99, 235, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+        }
+        .ai-glow {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 left-0 sticky z-50 bg-[#f8f9fa] bg-[#f3f4f5] flex justify-between items-center px-12 h-20 w-full flat no shadows">
+<div class="flex items-center gap-8">
+<span class="text-lg font-extrabold tracking-tighter text-slate-900">Cognitive Gallery</span>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-lowest rounded-full outline outline-1 outline-outline-variant/15">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-headline text-[11px] font-semibold uppercase tracking-widest text-on-surface-variant">Live</span>
+</div>
+</div>
+<nav class="hidden md:flex gap-8 items-center font-['Manrope'] uppercase tracking-widest text-[11px] font-semibold">
+<a class="text-slate-900 border-b-2 border-[#2563eb] pb-2 scale-95 active:scale-90 transition-transform" href="#">Dashboard</a>
+<a class="text-slate-500 pb-2 hover:text-[#2563eb] transition-colors duration-300 scale-95 active:scale-90 transition-transform" href="#">History</a>
+<a class="text-slate-500 pb-2 hover:text-[#2563eb] transition-colors duration-300 scale-95 active:scale-90 transition-transform" href="#">Analytics</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="text-slate-500 hover:text-[#2563eb] transition-colors duration-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-500 hover:text-[#2563eb] transition-colors duration-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<button class="font-headline uppercase tracking-widest text-[11px] font-semibold text-error px-4 py-2 rounded-lg outline outline-1 outline-outline-variant/20 hover:bg-error-container transition-colors">
+                End Session
+            </button>
+<img alt="User Avatar" class="w-10 h-10 rounded-full object-cover outline outline-1 outline-outline-variant/15" data-alt="close up professional headshot of young woman looking confident with soft studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJCSppEsR6oT6e3rh7zxJ57adG6i66CDF4m4jVQ6Wy65zixQNoMid_cehmIBm3A1gBvPxIw2MMUxCtEdpIT6YiKwa4CEeHaGnjsx9tAuMUCOEKRLbf-ezunCFVcIE3ikWgNT6iZchJtQg70OM-Z7pfvZSYQ6w9LTpV9mzKIkRqQO31PHXYx9_Rnpc6JU2pQMuOFc-m4awkn3yJ6MMAeePKbcHnDYLxOfEwH4F7iit5bAfrXX5p8kmBXa8kxi7KrckZD9ZH3B4N6VWu"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex overflow-hidden bg-surface-container-low/30">
+<!-- Left/Center Column: Interaction Canvas -->
+<div class="flex-1 flex flex-col p-8 lg:p-12 gap-8 overflow-y-auto">
+<!-- Session Header -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline text-on-surface-variant text-sm font-semibold uppercase tracking-widest mb-1">Senior Frontend Engineer Interview</h2>
+<h1 class="font-headline text-display-lg font-bold text-on-surface leading-tight tracking-tight">Alex Rivera</h1>
+</div>
+<div class="flex gap-3 mb-2">
+<span class="px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full font-label text-sm font-medium tracking-wide uppercase">Hard</span>
+<span class="px-4 py-1.5 bg-surface-container-lowest text-on-surface-variant outline outline-1 outline-outline-variant/15 rounded-full font-label text-sm font-medium tracking-wide uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">mic</span> Voice</span>
+</div>
+</div>
+<div class="flex gap-6 mt-4 border-t border-outline-variant/15 pt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">timer</span>
+<span class="font-label text-sm font-medium">14:20 elapsed</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">progress_activity</span>
+<span class="font-label text-sm font-medium">Q4 of 10</span>
+</div>
+</div>
+</div>
+<!-- Main Conversation Panel (Center) -->
+<div class="bg-surface-container-lowest rounded-xl flex-1 flex flex-col items-center justify-center p-12 relative overflow-hidden" style="box-shadow: 0 20px 40px rgba(25, 28, 29, 0.02);">
+<!-- AI Visualization -->
+<div class="mb-12 relative flex justify-center items-center">
+<div class="w-48 h-48 rounded-full bg-primary-container ai-glow flex items-center justify-center relative z-10">
+<div class="w-32 h-32 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-5xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+</div>
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl scale-150 z-0"></div>
+</div>
+<h3 class="font-headline text-label-md font-semibold tracking-widest uppercase text-on-surface-variant mb-6">Technical Lead AI</h3>
+<p class="font-headline text-2xl lg:text-3xl font-medium text-center text-on-surface max-w-3xl leading-snug">
+                    "Can you describe a time when you had to resolve a complex architectural disagreement within your team?"
+                </p>
+<div class="flex gap-4 mt-12 absolute bottom-8">
+<button class="w-12 h-12 rounded-full bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors outline outline-1 outline-outline-variant/20">
+<span class="material-symbols-outlined">volume_off</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors outline outline-1 outline-outline-variant/20">
+<span class="material-symbols-outlined">replay</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors outline outline-1 outline-outline-variant/20">
+<span class="material-symbols-outlined">pause</span>
+</button>
+</div>
+</div>
+<!-- Candidate Response Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-8 outline outline-1 outline-outline-variant/15">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-headline text-label-sm font-semibold tracking-widest uppercase text-on-surface-variant">Your Response</h4>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label text-xs text-primary font-medium tracking-wide">Recording</span>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<button class="w-20 h-20 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 hover:bg-primary/90 transition-colors shadow-lg">
+<span class="material-symbols-outlined text-3xl">mic</span>
+</button>
+<div class="flex-1 bg-surface-container-low/50 rounded-lg p-6 outline outline-1 outline-outline-variant/10 min-h-[120px]">
+<p class="font-body text-lg text-on-surface leading-relaxed">
+                            "In my last project, we were debating between a monolithic or micro-frontend approach..."
+                            <span class="inline-block w-1.5 h-5 bg-primary ml-1 animate-pulse align-middle"></span>
+</p>
+</div>
+</div>
+<div class="flex justify-end gap-4 mt-6">
+<button class="px-6 py-3 rounded-lg font-label text-sm font-medium text-primary outline outline-1 outline-outline-variant/20 hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">keyboard</span> Switch to Keyboard
+                    </button>
+<button class="px-6 py-3 rounded-lg font-label text-sm font-medium text-on-surface-variant outline outline-1 outline-outline-variant/20 hover:bg-surface-container-low transition-colors">
+                        Retry
+                    </button>
+<button class="px-6 py-3 rounded-lg font-label text-sm font-medium bg-error text-on-error hover:bg-error/90 transition-colors">
+                        Stop Recording
+                    </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar (Transcript & Eval) -->
+<div class="w-96 bg-surface-container-low flex flex-col border-l border-outline-variant/10 shadow-[-10px_0_20px_rgba(0,0,0,0.02)] z-10">
+<div class="p-8 pb-4">
+<h3 class="font-headline text-label-md font-semibold tracking-widest uppercase text-on-surface-variant mb-6">Live Evaluation</h3>
+<!-- Evaluation Snapshot Bento -->
+<div class="grid grid-cols-2 gap-3 mb-8">
+<div class="bg-surface-container-lowest rounded-lg p-4 outline outline-1 outline-outline-variant/15">
+<div class="text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wide">Clarity</div>
+<div class="flex items-center gap-2">
+<div class="h-2 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-4 outline outline-1 outline-outline-variant/15">
+<div class="text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wide">Confidence</div>
+<div class="flex items-center gap-2">
+<div class="h-2 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[70%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-4 outline outline-1 outline-outline-variant/15">
+<div class="text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wide">Technical</div>
+<div class="flex items-center gap-2">
+<div class="h-2 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-4 outline outline-1 outline-outline-variant/15">
+<div class="text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wide">Comm.</div>
+<div class="flex items-center gap-2">
+<div class="h-2 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<h3 class="font-headline text-label-md font-semibold tracking-widest uppercase text-on-surface-variant mb-4">Transcript</h3>
+</div>
+<!-- Scrollable Transcript -->
+<div class="flex-1 overflow-y-auto px-8 pb-8 flex flex-col gap-6">
+<!-- AI Turn -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-xs text-on-surface-variant mb-1">
+<span class="font-semibold uppercase tracking-wide text-primary">Technical Lead AI</span>
+<span>14:05</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg rounded-tl-none outline outline-1 outline-outline-variant/15 font-body text-sm text-on-surface">
+                        Welcome, Alex. Let's start with a general question. Could you briefly summarize your experience with React performance optimization?
+                    </div>
+</div>
+<!-- Candidate Turn -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-xs text-on-surface-variant mb-1">
+<span>14:08</span>
+<span class="font-semibold uppercase tracking-wide">Alex Rivera</span>
+</div>
+<div class="bg-primary/5 p-4 rounded-lg rounded-tr-none outline outline-1 outline-primary/10 font-body text-sm text-on-surface text-right">
+                        Certainly. In my previous role, we heavily relied on React.memo and useMemo for expensive calculations. I also implemented virtualization for large list rendering which cut our load times by roughly 40%.
+                    </div>
+</div>
+<!-- AI Turn -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-xs text-on-surface-variant mb-1">
+<span class="font-semibold uppercase tracking-wide text-primary">Technical Lead AI</span>
+<span>14:20</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg rounded-tl-none outline outline-1 outline-outline-variant/15 font-body text-sm text-on-surface border-l-2 border-primary">
+                        Can you describe a time when you had to resolve a complex architectural disagreement within your team?
+                    </div>
+</div>
+</div>
+<!-- Bottom Utility -->
+<div class="p-6 bg-surface-container-highest/30 backdrop-blur-md border-t border-outline-variant/10 flex flex-col gap-4">
+<div class="flex items-center justify-between text-xs font-label text-on-surface-variant px-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">settings_voice</span>
+                        Mic input good
+                    </div>
+<button class="hover:text-primary transition-colors">Test Audio</button>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-3 rounded-lg font-label text-sm font-medium text-on-surface bg-surface-container-lowest outline outline-1 outline-outline-variant/20 hover:bg-surface-container-low transition-colors">
+                        Save Progress
+                    </button>
+<button class="flex-1 py-3 rounded-lg font-label text-sm font-medium bg-error/10 text-error outline outline-1 outline-error/20 hover:bg-error/20 transition-colors">
+                        End Session
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

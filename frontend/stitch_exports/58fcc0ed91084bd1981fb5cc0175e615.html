@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cognitive Gallery - AI Interview Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#a83836",
+                    "on-secondary-fixed": "#393f51",
+                    "on-tertiary-container": "#564067",
+                    "on-surface-variant": "#596064",
+                    "surface-container": "#eaeff2",
+                    "surface-variant": "#dce4e8",
+                    "primary-fixed": "#3e76fe",
+                    "outline-variant": "#acb3b7",
+                    "secondary-fixed": "#dde1f9",
+                    "on-primary-container": "#000000",
+                    "error-dim": "#67040d",
+                    "secondary": "#595e72",
+                    "on-primary": "#faf8ff",
+                    "on-primary-fixed": "#ffffff",
+                    "outline": "#747c80",
+                    "surface-dim": "#d4dbdf",
+                    "tertiary-dim": "#604a72",
+                    "inverse-surface": "#0b0f10",
+                    "on-secondary-fixed-variant": "#565b6f",
+                    "error-container": "#fa746f",
+                    "on-error": "#fff7f6",
+                    "on-tertiary-fixed-variant": "#604a71",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#3e76fe",
+                    "background": "#f7f9fb",
+                    "tertiary": "#6d567f",
+                    "surface-tint": "#0053dc",
+                    "on-primary-fixed-variant": "#f9f7ff",
+                    "on-error-container": "#6e0a12",
+                    "secondary-dim": "#4d5266",
+                    "on-surface": "#2c3437",
+                    "surface-bright": "#f7f9fb",
+                    "secondary-container": "#dde1f9",
+                    "tertiary-container": "#e6cafa",
+                    "surface-container-low": "#f0f4f7",
+                    "on-tertiary-fixed": "#422d53",
+                    "inverse-on-surface": "#9a9d9f",
+                    "surface-container-highest": "#dce4e8",
+                    "on-tertiary": "#fff6fe",
+                    "inverse-primary": "#618bff",
+                    "on-background": "#2c3437",
+                    "on-secondary": "#faf8ff",
+                    "primary-dim": "#0049c2",
+                    "on-secondary-container": "#4c5164",
+                    "surface-container-high": "#e3e9ed",
+                    "primary-fixed-dim": "#2d68f0",
+                    "secondary-fixed-dim": "#cfd3eb",
+                    "tertiary-fixed-dim": "#d8bceb",
+                    "primary": "#0053dc",
+                    "surface": "#f7f9fb",
+                    "tertiary-fixed": "#e6cafa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl shadow-[0_24px_48px_rgba(44,52,55,0.06)] dark:shadow-none bg-surface-container-low">
+<div class="flex justify-between items-center px-8 md:px-20 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                Cognitive Gallery
+            </div>
+<nav class="hidden md:flex items-center gap-8 font-manrope font-medium tracking-tight text-sm">
+<a class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-blue-600 dark:border-blue-400 pb-1 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-md transition-all duration-300 px-3 py-2" href="#">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-md duration-300 px-3 py-2" href="#">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-md duration-300 px-3 py-2" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4 font-manrope font-medium tracking-tight text-sm">
+<button class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors hover:bg-slate-100/50 rounded-md px-4 py-2 scale-95 active:opacity-80 transition-transform">Sign In</button>
+<button class="bg-primary text-on-primary rounded-full px-6 py-2 bg-gradient-to-br from-primary to-primary-container hover:opacity-90 scale-95 active:opacity-80 transition-transform">Get Started</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col">
+<!-- Hero Section -->
+<section class="w-full px-8 md:px-20 py-24 lg:py-32 max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative">
+<div class="flex-1 flex flex-col items-start z-10">
+<h1 class="text-5xl lg:text-7xl font-extrabold font-headline tracking-tighter text-on-surface leading-[1.1] mb-6">
+                    Master the interview with AI.
+                </h1>
+<p class="text-lg lg:text-xl text-on-surface-variant font-body leading-relaxed mb-10 max-w-2xl">
+                    Practice with realistic, high-fidelity AI simulations in voice or chat. Get instant feedback and improve your performance in minutes.
+                </p>
+<div class="flex flex-wrap items-center gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full px-8 py-4 font-semibold hover:opacity-90 transition-opacity shadow-[0_8px_16px_rgba(0,83,220,0.2)]">
+                        Get Started Free
+                    </button>
+<button class="bg-surface-container-highest text-on-surface rounded-full px-8 py-4 font-semibold hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                        Watch Demo
+                    </button>
+</div>
+</div>
+<div class="flex-1 w-full relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden shadow-[0_24px_48px_rgba(44,52,55,0.06)] bg-surface-container-lowest">
+<img alt="Hero background" class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="Modern professional office setting with soft natural light, minimalist desk, warm inviting atmosphere for digital work" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEslqPbsWwiyi5cMrMmk80XL2LWsmroEQl5HNO1aKzGELt79jaq4A9vv-51l00KYzZ0oyJ5LvOOIsDXeIp_925EARwrp-v9Gh829A1dXLSW_CsXqb-Pp0YYjl1cILC5HA7CkVCBz0a9lP2yg2BC91oSza9K4X5WkdiJMixTUdsV8zXbQ89Q89br2OZR0pqh_yV4aGYrrD528Smt614B7bLMfkgG6lu6pmZvI3EM1fAEf8kx5SFrIWb6jwgboo3cF0PGcCH3mDlGTA4"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface/80 to-transparent"></div>
+<!-- Floating Persona Chip -->
+<div class="absolute bottom-12 left-12 bg-surface-container-lowest/70 backdrop-blur-[10px] border border-outline-variant/10 rounded-2xl p-6 shadow-[0_24px_48px_rgba(44,52,55,0.06)] flex items-center gap-4 max-w-sm">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-tertiary to-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Alex - Sr. Engineer Mock</p>
+<p class="text-xs text-on-surface-variant">"Let's discuss system design..."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Metrics Strip -->
+<section class="w-full bg-surface-container-low py-12 px-8">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24 text-center divide-y md:divide-y-0 md:divide-x divide-outline-variant/20">
+<div class="py-4 md:py-0 md:px-8">
+<p class="text-3xl font-extrabold text-primary mb-2">10k+</p>
+<p class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Sessions Conducted</p>
+</div>
+<div class="py-4 md:py-0 md:px-8">
+<p class="text-3xl font-extrabold text-primary mb-2">92%</p>
+<p class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Candidate Success</p>
+</div>
+<div class="py-4 md:py-0 md:px-8">
+<p class="text-3xl font-extrabold text-primary mb-2">24/7</p>
+<p class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">AI Availability</p>
+</div>
+</div>
+</section>
+<!-- Product Preview -->
+<section class="w-full px-8 md:px-20 py-24 max-w-screen-2xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl lg:text-4xl font-bold font-headline text-on-surface mb-4">Choose Your Mode</h2>
+<p class="text-on-surface-variant text-lg">Select the simulation environment that fits your prep needs.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 lg:p-12 shadow-[0_24px_48px_rgba(44,52,55,0.06)] hover:-translate-y-2 transition-transform duration-300 border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="w-16 h-16 rounded-2xl bg-surface-container-low flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">Live Voice Interview</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Experience the pressure of a real conversation. Real-time TTS &amp; Voice Synthesis simulate human interaction perfectly.
+                    </p>
+<button class="text-primary font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Try Voice Mode <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 lg:p-12 shadow-[0_24px_48px_rgba(44,52,55,0.06)] hover:-translate-y-2 transition-transform duration-300 border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-bl-full -z-10 group-hover:bg-tertiary/10 transition-colors"></div>
+<div class="w-16 h-16 rounded-2xl bg-surface-container-low flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl text-tertiary" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">Chat-Based Interview</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Focus on the logic of your answers. Interactive text-based evaluation for technical screens and structured thinking.
+                    </p>
+<button class="text-tertiary font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Try Chat Mode <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="w-full bg-surface-container-low py-24 px-8 md:px-20">
+<div class="max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_24px_48px_rgba(44,52,55,0.04)] border border-outline-variant/5">
+<span class="material-symbols-outlined text-2xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h4 class="text-xl font-bold text-on-surface mb-3">Instant Feedback</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Get a detailed breakdown of your performance right after you finish. Identify weak spots immediately.
+                        </p>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_24px_48px_rgba(44,52,55,0.04)] border border-outline-variant/5">
+<span class="material-symbols-outlined text-2xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h4 class="text-xl font-bold text-on-surface mb-3">Realistic Simulations</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            AI-driven personas tailored to specific roles and difficulty levels. Prep for the exact role you want.
+                        </p>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_24px_48px_rgba(44,52,55,0.04)] border border-outline-variant/5">
+<span class="material-symbols-outlined text-2xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">tune</span>
+<h4 class="text-xl font-bold text-on-surface mb-3">Mode Flexibility</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Switch between voice for presence or chat for focused logic. Train all your communication muscles.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Roadmap Hint -->
+<section class="w-full py-12 px-8 flex justify-center">
+<div class="bg-surface-container-lowest px-6 py-3 rounded-full shadow-[0_8px_24px_rgba(44,52,55,0.04)] border border-outline-variant/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<p class="text-sm font-medium text-on-surface-variant">Coming Soon: Integrated Job Application Tracker</p>
+</div>
+</section>
+<!-- Footer CTA -->
+<section class="w-full px-8 py-24 text-center max-w-3xl mx-auto">
+<h2 class="text-3xl md:text-5xl font-extrabold font-headline text-on-surface mb-8 leading-tight">
+                The future of interview prep is here.
+            </h2>
+<p class="text-lg text-on-surface-variant mb-10">
+                Create your free account today.
+            </p>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full px-10 py-4 font-semibold text-lg hover:opacity-90 transition-opacity shadow-[0_8px_16px_rgba(0,83,220,0.2)]">
+                Get Started Free
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-8 md:px-20 bg-slate-50 dark:bg-slate-950 font-manrope text-sm leading-relaxed text-blue-600 dark:text-blue-400 bg-surface-container-high shadow-none">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-screen-2xl mx-auto opacity-100 hover:opacity-80 transition-opacity">
+<div class="text-lg font-black tracking-tighter text-slate-800 dark:text-slate-200">
+                Cognitive Gallery
+            </div>
+<nav class="flex flex-wrap justify-center md:justify-end gap-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline decoration-2 underline-offset-4 transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline decoration-2 underline-offset-4 transition-all" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline decoration-2 underline-offset-4 transition-all" href="#">Contact</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline decoration-2 underline-offset-4 transition-all" href="#">Twitter</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline decoration-2 underline-offset-4 transition-all" href="#">LinkedIn</a>
+</nav>
+<div class="text-slate-500 dark:text-slate-400 text-xs">
+                © 2024 Cognitive Gallery. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
