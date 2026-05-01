@@ -1,6 +1,6 @@
 # 🎙️ Multi-Agent Interview Panel
 
-AI-powered interview practice with a panel of three specialist agents — HR Interviewer, Technical Lead, and Behavioral Coach. Upload your resume, get probing questions, and receive a detailed scorecard with resume cross-referencing.
+AI-powered interview with a panel of three specialist agents — HR Interviewer, Technical Lead, and Behavioral Coach. Upload your resume, get probing questions, and receive a detailed scorecard with resume cross-referencing.
 
 ## ✨ Features
 
